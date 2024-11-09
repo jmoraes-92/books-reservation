@@ -1,0 +1,24 @@
+<!-- src/app/components/book-form/book-form.component.html -->
+<div>
+    <h2>{{ editMode ? 'Editar Livro' : 'Cadastrar Livro' }}</h2>
+    <form (ngSubmit)="saveLivro()">
+      <label>Título:</label>
+      <input [(ngModel)]="livro.titulo" name="titulo" required />
+      
+      <label>Autor:</label>
+      <input [(ngModel)]="livro.autor" name="autor" required />
+      
+      <label>Gênero:</label>
+      <input [(ngModel)]="livro.genero" name="genero" required />
+      
+      <label>ISBN:</label>
+      <input type="number" [(ngModel)]="livro.isbn" name="isbn" required />
+      
+      <label>Ano:</label>
+      <input type="number" [(ngModel)]="livro.ano" name="ano" required />
+      
+      <button type="submit">Salvar</button>
+      <button type="button" (click)="router.navigate(['/'])">Cancelar</button>
+    </form>
+  </div>
+  
